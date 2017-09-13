@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>同城共响</title>
+  
+  <!-- Include jQuery Mobile stylesheets -->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- Include the jQuery library -->
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    ul#mylist {
+      list-style:none;
+      padding: 0;
+    }
+    ul#mylist > li {
+      padding: 0;
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>同城共响</h1>
+  </div>
+<!-- nav -->
+  <div data-role="navbar">
+    <ul>
+        <li><a href="#" data-icon="home" class="ui-corner-all ui-shadow">主页</a></li>
+        <li><a href="#" data-icon="action" class="ui-corner-all ui-shadow">求租</a></li>
+        <li><a href="#" data-icon="action" class="ui-corner-all ui-shadow">出租</a></li>
+        <li><a href="#" data-icon="action" class="ui-corner-all ui-shadow">会员</a></li>
+        <li>
+          <a href="#myPopup" data-rel="popup" class="ui-btn ui-corner-all ui-shadow" data-icon="search">搜索</a>
+
+          <div data-role="popup" id="myPopup" class="ui-content">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-left">关闭</a>
+                  <!-- search -->
+                  <form method="post" action="">
+                    <input type="search" name="search" id="search" placeholder="Search for content..." class="ui-shadow">
+                    <input type="submit" data-inline="true" value="搜索" class="ui-shadow">
+                  </form> 
+          </div>
+        </li>
+    </ul>
+
+    <ul style="margin-top: 2px;">
+        <li>
+          <a href="#" class="ui-btn ui-corner-all ui-icon-arrow-d-l ui-btn-icon-right">订单查询</a>
+        </li>
+        <li>
+          <a href="#" class="ui-btn ui-corner-all ui-icon-arrow-d-l ui-btn-icon-right">排列</a>
+        </li>
+    </ul>
+  </div>
+
+<!-- content -->
+  <div data-role="main" class="ui-content">
+    <ul id="mylist" data-inset="true">
+    <!-- 1 -->
+      <li>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-carat-r ui-btn-icon-right">
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <img src="yx.jpg" style="width: 100%;">
+            </div>
+
+            <div class="ui-block-b">
+              <ul style="list-style: none; padding: 0px;">
+                <li>型号</li>
+                <li>数量</li>
+                <li>状态</li>
+                <li>成色</li>
+                <li>租赁价格</li>
+                <li>持续时效</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </li>
+
+<!-- 2 -->
+      <li>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-carat-r ui-btn-icon-right">
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <img src="yx.jpg" style="width: 100%;">
+            </div>
+
+            <div class="ui-block-b">
+              <ul style="list-style: none; padding: 0px;">
+                <li>型号</li>
+                <li>数量</li>
+                <li>状态</li>
+                <li>成色</li>
+                <li>租赁价格</li>
+                <li>持续时效</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </li>
+
+<!-- 3 -->
+      <li>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-carat-r ui-btn-icon-right">
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <img src="yx.jpg" style="width: 100%;">
+            </div>
+
+            <div class="ui-block-b">
+              <ul style="list-style: none; padding: 0px;">
+                <li>型号</li>
+                <li>数量</li>
+                <li>状态</li>
+                <li>成色</li>
+                <li>租赁价格</li>
+                <li>持续时效</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+<!-- foot -->
+  <div data-role="footer">
+    <h2>@ 掌握行情</h2>
+  </div>
+</div> 
+
+</body>
+</html>

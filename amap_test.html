@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <style type="text/css">
+      #container,#container3d{
+        height: 360px;
+        margin: 5px;
+      }
+    </style>
+    <title>地图地图</title>
+    
+  </head>
+  <body>
+   <div id="container" tabindex="0"></div>
+   <div id="container3d" tabindex="1"></div>
+   <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.0&key=5f4df36caa9ce837fe01ca0ef800cb0d&callback=init"></script>
+   <script type="text/javascript">
+    function init(){
+      var map = new AMap.Map('container',{
+            resizeEnable: true,
+            zoom: 18,
+            center: [109.22032,23.741299]
+      });
+
+      var map3d = new AMap.Map('container3d', {
+          pitch:75,
+          viewMode:'3D',
+          zoom: 17,
+          expandZoomRange:true,
+          zooms:[3,20],
+          center:[109.22032,23.741299]
+        });
+
+      var marker = new AMap.Marker({
+          position: [109.22032,23.741299],//marker所在的位置
+          map:map//创建时直接赋予map属性
+      });
+      //也可以在创建完成后通过setMap方法执行地图对象
+      marker.setMap(map);
+
+      AMap.plugin(['AMap.ToolBar','AMap.AdvancedInfoWindow'],function(){
+          //创建并添加工具条控件
+          var toolBar = new AMap.ToolBar();
+          map.addControl(toolBar);
+          //创建高级信息窗体并在指定位置打开
+          var infowindow = new AMap.AdvancedInfoWindow({
+            content: '<div class="info-title">高德地图</div><div class="info-content">'+
+                  '<img src="http://webapi.amap.com/images/amap.jpg">'+
+                  '高德是中国领先的数字地图内容、导航和位置服务解决方案提供商。<br>'+
+                  '</div>',
+            offset: new AMap.Pixel(0, -10)
+          });
+          // infowindow.open(map,[109.22032,23.741299]);
+      })
+
+      AMap.plugin(['AMap.ToolBar','AMap.Scale','AMap.OverView'],
+          function(){
+              // map.addControl(new AMap.ToolBar());
+
+              // map.addControl(new AMap.Scale());
+
+              // map.addControl(new AMap.OverView({isOpen:true}));
+      });
+   }
+   </script>
+  <script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+  </body>
+</html>
